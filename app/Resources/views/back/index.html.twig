@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2 class="page-header">Person List</h2>
+<table class="table table-striped"> 
+	<thead> 
+		<tr> 
+			<th>id</th> 
+			<th>Lastname</th> 
+			<th>Firstname</th> 
+			<th>Age</th> 
+			<th></th>
+		</tr> 
+	</thead> 
+	<tbody> 
+		{% for person in persons %}
+			<tr> 
+				<th scope="row">{{person.id}}</th> 
+				<td>{{person.lastname}}</td> 
+				<td>{{person.firstname}}</td> 
+				<td>{{person.age}}</td> 
+				<td><a href="/delete/{{person.id}}" class="btn btn-danger">Delete</a>
+			</tr> 
+		{% endfor %}
+	</tbody> 
+</table>
+{% endblock %}
