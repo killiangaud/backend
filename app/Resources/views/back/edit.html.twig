@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h2 class="page-header">Edit Person</h2>
+	{{form_start(form)}}
+		{{form_label(form.lastname)}}
+		{{form_widget(form.lastname, {'attr': {'class' : 'form-control', 'style' : 'margin-bottom:15px'} })}}
+
+		{{form_label(form.firstname)}}
+		{{form_widget(form.firstname, {'attr': {'class' : 'form-control', 'style' : 'margin-bottom:15px'} })}}
+
+		{{form_label(form.age)}}
+		{{form_widget(form.age, {'attr': {'class' : 'form-control', 'style' : 'margin-bottom:15px'} })}}
+
+		{{form_label(form.address)}}
+		{{form_widget(form.address, {'attr': {'class' : 'form-control', 'style' : 'margin-bottom:15px'} })}}
+		
+		<input type="submit" value="Save" class="btn btn-primary" />
+	{{form_end(form)}}
+{% endblock %}

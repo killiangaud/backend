@@ -9,6 +9,7 @@
 			<th>Lastname</th> 
 			<th>Firstname</th> 
 			<th>Age</th> 
+			<th>Adress</th>
 			<th></th>
 		</tr> 
 	</thead> 
@@ -19,7 +20,11 @@
 				<td>{{person.lastname}}</td> 
 				<td>{{person.firstname}}</td> 
 				<td>{{person.age}}</td> 
-				<td><a href="/delete/{{person.id}}" class="btn btn-danger">Delete</a>
+				<td>{{person.address}}</td>
+				<td>
+					<a href="/edit/{{person.id}}" class="btn btn-default">Edit</a>
+					<a href="/delete/{{person.id}}" class="btn btn-danger">Delete</a>
+				</td>
 			</tr> 
 		{% endfor %}
 	</tbody> 

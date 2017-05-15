@@ -42,6 +42,14 @@ class Person
      */
     private $age;
 
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Address", inversedBy="persons")
+     * @ORM\JoinColumn(name="address", referencedColumnName="id")
+     */
+    private $address;
+
+
     //constructor
     public function __construct(){}
 
@@ -126,5 +134,46 @@ class Person
     {
         return $this->age;
     }
-}
 
+    /**
+     * Set addressId
+     *
+     * @param \AppBundle\Entity\Address $addressId
+     *
+     * @return Person
+     */
+    public function setAddressId(\AppBundle\Entity\Address $addressId = null)
+    {
+        $this->addressId = $addressId;
+
+        return $this;
+    }
+
+    /**
+     * Set address
+     *
+     * @param \AppBundle\Entity\Address $address
+     *
+     * @return Person
+     */
+    public function setAddress(\AppBundle\Entity\Address $address = null)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return \AppBundle\Entity\Address
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function __toString() {
+        return $this->Lastname . ' ' . $this->Firstname;
+    }
+}
